@@ -1,0 +1,21 @@
+<%- include('partials/header')%>
+
+<div class="container">
+    <form class="form-group" action="/Movie/New" method="POST">
+        <div class="form-group col-md-6">
+        <div class="form-group">
+            <label for="Tile">Tile</label>
+            <input type="text" name="title" id="title" class="form-control" placeholder="" required>
+            
+        </div>
+        <div class="form-group">
+            <label for="Completed">Completed</label>
+            <input type="text" name="completed" id="completed" class="form-control" placeholder="" required>
+            
+        </div>
+        <div class="form-group">
+         <button type="submit"> Create New</button>
+        </div>
+    </div>
+    </form>
+</div>

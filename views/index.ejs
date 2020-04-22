@@ -1,0 +1,52 @@
+<%- include('partials/header')%>
+<div class="container">
+  <h1>List of Movies</h1>
+  <a href="/Movie/New" class="btn btn-primary">New Movie</a>
+  <hr />
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Completed</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%for(var details of WebsiteName) {%>
+      <tr>
+        <td><%=details.id%></td>
+        <td><%=details.title%></td>
+        <td><%=details.completed%></td>
+        <td>
+          <div style="float: left; margin: 5px;">
+            <a href="/Movie/Edit/<%=details.id%>" class="btn btn-primary mb-2">
+              <span class="glyphicon glyphicon-pencil"></span> Edit</a
+            >
+          </div>
+
+          <div style="float: left; margin: 5px;">
+            <form
+              class="form-inline"
+              method="POST"
+              action="/Movie/Delete/<%=details.id%>?_method=DELETE"
+            >
+              <button
+                type="submit"
+                class="btn btn-danger mb-2"
+                onclick="return confirm('Are you sure you want to delete <%= details.title %>? This action cannot be undone.')"
+              >
+                <span
+                  class="glyphicon glyphicon-trash"
+                  aria-hidden="true"
+                ></span>
+                Delete
+              </button>
+            </form>
+          </div>
+        </td>
+      </tr>
+      <%}%>
+    </tbody>
+  </table>
+</div>
