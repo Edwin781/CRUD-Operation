@@ -1,13 +1,13 @@
-var express = require("express");
+const express = require("express");
 const bodyparser = require("body-parser");
 const logger = require("morgan");
-let ejs = require("ejs");
-var path = require("path");
+const ejs = require("ejs");
+const path = require("path");
 const methodOverride = require("method-override");
 
-var app = express();
-let MovieRouter = require("./routes/Movies");
-let LoginRouter = require("./routes/Login");
+const app = express();
+const MovieRouter = require("./routes/Movies");
+const LoginRouter = require("./routes/Login");
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
