@@ -1,6 +1,6 @@
-var express = require("express");
+var express = require("./node_modules/express");
 var router = express.Router();
-var pool = require("../config");
+var pool = require("../config/db");
 
 //Redirect to Router
 router.get("/", (req, res) => {

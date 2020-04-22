@@ -1,17 +1,15 @@
-//Import mysql module
-let mysql = require("mysql");
-let pool = require("./config");
+var express = require("express");
 const bodyparser = require("body-parser");
 const logger = require("morgan");
-var express = require("express");
 let ejs = require("ejs");
-var app = express();
 var path = require("path");
 const methodOverride = require("method-override");
 
-let MovieRouter = require("./Routes/Movies");
-let LoginRouter = require("./Routes/Login");
+var app = express();
+let MovieRouter = require("./routes/Movies");
+let LoginRouter = require("./routes/Login");
 
+app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

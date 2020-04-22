@@ -2,7 +2,7 @@
   "name": "node_database_app",
   "version": "1.0.0",
   "description": "Database App",
-  "main": "connect.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

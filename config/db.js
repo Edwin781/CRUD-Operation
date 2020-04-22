@@ -2,9 +2,9 @@ const mysql = require("mysql");
 
 let config = {
   host: "localhost",
-  user: "Your UserName",
-  password: "Your Password",
-  database: "Database Name",
+  user: "root",
+  password: "Chimeremeze1",
+  database: "todoapp",
 };
 
 const pool = mysql.createPool(config);
